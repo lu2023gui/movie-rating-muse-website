@@ -1,5 +1,5 @@
 
-import { Star, StarOff } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface StarDisplayProps {
   rating: number;
@@ -12,10 +12,17 @@ const StarDisplay = ({ rating }: StarDisplayProps) => {
   return (
     <div className="flex items-center gap-1">
       {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+        <Star 
+          key={`full-${i}`} 
+          className="w-6 h-6 text-yellow-400 fill-yellow-400 animate-star-ping" 
+          style={{ animationDelay: `${i * 150}ms` }}
+        />
       ))}
       {[...Array(emptyStars)].map((_, i) => (
-        <StarOff key={`empty-${i}`} className="w-6 h-6 text-gray-400" />
+        <Star 
+          key={`empty-${i}`} 
+          className="w-6 h-6 text-gray-400" 
+        />
       ))}
     </div>
   );
