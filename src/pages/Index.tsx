@@ -67,7 +67,7 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden font-roboto"
       style={{
         background: "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)"
       }}
@@ -141,15 +141,13 @@ const Index = () => {
                 <div className="flex gap-2">
                   <Button 
                     onClick={() => handleStarResponse("yes")}
-                    variant="outline"
-                    className="flex-1 border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-white"
+                    className="flex-1 bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white transition-all duration-300"
                   >
                     Yes
                   </Button>
                   <Button 
                     onClick={() => handleStarResponse("no")}
-                    variant="outline"
-                    className="flex-1 border-white/20 hover:border-white/40 hover:bg-white/10 text-white"
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-500 hover:to-red-500 text-white transition-all duration-300"
                   >
                     No
                   </Button>
@@ -172,8 +170,7 @@ const Index = () => {
 
             <Button 
               onClick={resetForm}
-              variant="outline"
-              className="w-full mt-4 border-white/20 hover:border-red-500/50 hover:bg-red-500/10 text-white transition-colors group"
+              className="w-full mt-4 bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white transition-colors group"
             >
               <Clapperboard className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
               Rate Another Movie

@@ -121,6 +121,9 @@ export default {
 				'fade-in': 'fade-in 0.5s ease-out',
 				'shake': 'shake 0.5s ease-in-out',
 				'star-ping': 'star-ping 0.5s ease-out forwards',
+			},
+			fontFamily: {
+				'roboto': ['Roboto', 'sans-serif'],
 			}
 		}
 	},
