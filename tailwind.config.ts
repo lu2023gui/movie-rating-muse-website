@@ -123,7 +123,7 @@ export default {
 				'star-ping': 'star-ping 0.5s ease-out forwards',
 			},
 			fontFamily: {
-				'roboto': ['Roboto', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
 			}
 		}
 	},

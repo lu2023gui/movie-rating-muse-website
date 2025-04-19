@@ -3,7 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import StarDisplay from "@/components/StarDisplay";
-import { Film, Star, Clapperboard } from "lucide-react";
+import { Film, Star, Clapperboard, Drama, Popcorn, Theater } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Index = () => {
   const [rottenTomatoes, setRottenTomatoes] = useState("");
@@ -67,15 +74,18 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden font-roboto"
+      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden font-playfair"
       style={{
         background: "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)"
       }}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Film className="absolute text-blue-500/20 w-24 h-24 animate-float-slow top-20 left-[10%]" />
-        <Star className="absolute text-red-500/20 w-16 h-16 animate-float top-40 right-[15%]" />
+        <Star className="absolute text-yellow-400/20 w-16 h-16 animate-float top-40 right-[15%]" />
         <Clapperboard className="absolute text-blue-500/20 w-20 h-20 animate-float-reverse bottom-20 left-[20%]" />
+        <Drama className="absolute text-red-500/20 w-18 h-18 animate-float top-[30%] left-[30%]" />
+        <Popcorn className="absolute text-yellow-400/20 w-16 h-16 animate-float-slow bottom-[25%] right-[25%]" />
+        <Theater className="absolute text-blue-500/20 w-20 h-20 animate-float-reverse top-[15%] right-[35%]" />
       </div>
 
       <Card className="w-full max-w-md p-6 space-y-6 bg-black/60 backdrop-blur-md border-white/10 shadow-2xl animate-fade-in">
@@ -135,38 +145,24 @@ const Index = () => {
             </p>
             <p className="text-lg text-white/90">{getReviewComment(average)}</p>
             
-            {showStars === null && (
-              <div className="space-y-2 animate-fade-in">
-                <p className="text-white/80">Would you like to see the rating in stars?</p>
-                <div className="flex gap-2">
-                  <Button 
-                    onClick={() => handleStarResponse("yes")}
-                    className="flex-1 bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white transition-all duration-300"
-                  >
-                    Yes
-                  </Button>
-                  <Button 
-                    onClick={() => handleStarResponse("no")}
-                    className="flex-1 bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-500 hover:to-red-500 text-white transition-all duration-300"
-                  >
-                    No
-                  </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  className="w-full bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white transition-all duration-300 group"
+                >
+                  <Star className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
+                  See Star Rating
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="bg-black/90 border-white/10">
+                <DialogHeader>
+                  <DialogTitle className="text-center text-white">Star Rating ({(average / 20).toFixed(4)})</DialogTitle>
+                </DialogHeader>
+                <div className="flex justify-center py-4">
+                  <StarDisplay rating={average / 20} />
                 </div>
-              </div>
-            )}
-
-            {showStars === true && (
-              <div className="space-y-2 animate-fade-in">
-                <p className="text-white/80">Star Rating ({(average / 20).toFixed(4)})</p>
-                <StarDisplay rating={average / 20} />
-              </div>
-            )}
-
-            {showStars === false && (
-              <p className="text-white/80 animate-fade-in">
-                Okay. Enjoy the movie{average < 40 ? " (or bear with it)" : ""}!
-              </p>
-            )}
+              </DialogContent>
+            </Dialog>
 
             <Button 
               onClick={resetForm}
