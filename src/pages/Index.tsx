@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -74,7 +75,7 @@ const Index = () => {
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden font-playfair"
+      className="min-h-screen flex items-center justify-center bg-transparent backdrop-blur-sm p-4 relative overflow-hidden font-sans"
       style={{
         background: "linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)"
       }}
