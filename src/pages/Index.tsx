@@ -24,8 +24,8 @@ const Index = () => {
     if (avg < 20) return "Now that's a TERRIBLE movie!";
     if (avg < 40) return "With a BAD movie like that, it would have been better to go see Pelé's!";
     if (avg < 60) return "Only MEDIOCRE, no comments!";
-    if (avg < 73.6667) return "It's actually a GOOD movie, I liked it!";
-    if (avg < 87.3333) return "What a GREAT movie, my friends, incredible!";
+    if (avg < 221/3) return "It's actually a GOOD movie, I liked it!";
+    if (avg < 262/3) return "What a GREAT movie, my friends, incredible!";
     return "That's ABSOLUTE CINEMA!";
   };
 
