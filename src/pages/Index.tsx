@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -141,11 +142,11 @@ const Index = () => {
 
         {average !== null && (
           <div className="space-y-4 border-t border-white/10 pt-4 animate-fade-in">
-            <p className="text-lg text-white/90">
+            <p className="text-lg text-white/90 text-center">
               Average Rating: <span className="font-bold text-blue-400">{average.toFixed(4)}</span>
             </p>
             <div className="text-center">
-              <p className="text-2xl font-bold text-white animate-fade-in">
+              <p className="text-3xl font-bold text-white animate-fade-in">
                 {getReviewComment(average)}
               </p>
             </div>
@@ -184,3 +185,4 @@ const Index = () => {
 };
 
 export default Index;
+
