@@ -20,7 +20,7 @@ const Index = () => {
   const [error, setError] = useState("");
   
   const getReviewComment = (avg: number) => {
-    if (avg < 20) return "Now that's a TERRIBLE movie!";
+    if (avg < 20) return "Now that's a TERRIBLE moviee!";
     if (avg < 40) return "With a BAD movie like that, it would have been better to go see Pelé's!";
     if (avg < 60) return "Only MEDIOCRE, no comments!";
     if (avg <= 218/3) return "It's actually a GOOD movie, I liked it!";
