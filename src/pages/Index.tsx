@@ -143,7 +143,11 @@ const Index = () => {
             <p className="text-lg text-white/90">
               Average Rating: <span className="font-bold text-blue-400">{average.toFixed(4)}</span>
             </p>
-            <p className="text-lg text-white/90">{getReviewComment(average)}</p>
+            <div className="text-center">
+              <p className="text-2xl font-bold text-white animate-pulse">
+                {getReviewComment(average)}
+              </p>
+            </div>
             
             <Dialog>
               <DialogTrigger asChild>
