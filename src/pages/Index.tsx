@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -144,7 +145,7 @@ const Index = () => {
               Average Rating: <span className="font-bold text-blue-400">{average.toFixed(4)}</span>
             </p>
             <div className="text-center">
-              <p className="text-2xl font-bold text-white animate-pulse">
+              <p className="text-2xl font-bold text-white animate-fade-in">
                 {getReviewComment(average)}
               </p>
             </div>
